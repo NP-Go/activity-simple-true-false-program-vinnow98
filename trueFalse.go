@@ -2,20 +2,22 @@ package main
 
 import "fmt"
 
-func compare(value int) string {
-	//do not change this variable resultMessage, secretValue
-	resultMessge := ""
-	secretValue := 88
+func main() {
 
-	//Insert your code from here
+	fmt.Println("Enter an integer value: ")
 
-	//do not remove this line
-	return resultMessge
+	compare()
 }
 
-func main() {
+func compare() {
+	secretValue := 88
 	var guess int
-	fmt.Println("Enter an integer value: ")
 	fmt.Scanln(&guess)
-	compare(guess)
+	if guess == secretValue {
+		fmt.Println(" You got it right!")
+	} else if guess > secretValue {
+		fmt.Println("Too high, try again next time!")
+	} else if guess < secretValue {
+		fmt.Println("Too low, try again next time!")
+	}
 }
